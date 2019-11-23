@@ -42,25 +42,12 @@ class Party(models.Model):
         return cls.objects.order_by('category', '-is_invited', 'name')
 
     @property
-    def ordered_guests(self):
-        return self.guest_set.order_by('is_child', 'pk')
-
-    @property
     def any_guests_attending(self):
         return any(self.guest_set.values_list('is_attending', flat=True))
 
     @property
     def guest_emails(self):
         return list(filter(None, self.guest_set.values_list('email', flat=True)))
-
-
-MEALS = [
-    ('beef', 'cow'),
-    ('fish', 'fish'),
-    ('hen', 'hen'),
-    ('vegetarian', 'vegetable'),
-]
-
 
 class Guest(models.Model):
     """
@@ -71,8 +58,6 @@ class Guest(models.Model):
     last_name = models.TextField(null=True, blank=True)
     email = models.TextField(null=True, blank=True)
     is_attending = models.NullBooleanField(default=None)
-    meal = models.CharField(max_length=20, choices=MEALS, null=True, blank=True)
-    is_child = models.BooleanField(default=False)
 
     @property
     def name(self):

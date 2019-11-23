@@ -26,13 +26,6 @@ class GuestImporterTest(TestCase):
             the_starks = Guest.objects.filter(party__name='The Starks')
             self.assertEqual(3, the_starks.count())
 
-    def test_is_child(self):
-        for guest in Guest.objects.all():
-            if guest.first_name == 'Arya':
-                self.assertTrue(guest.is_child)
-            else:
-                self.assertFalse(guest.is_child)
-
     def test_is_invited(self):
         for party in Party.objects.all():
             if party.name == 'Jaime':
