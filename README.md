@@ -3,7 +3,6 @@
 Live site examples:
 
 - [Standard Wedding Website](http://rowena-and.coryzue.com/)
-- [Random Save The Date Email](http://rowena-and.coryzue.com/save-the-date/) (refresh for more examples)
 - [Sample Personal Invitation Page](http://rowena-and.coryzue.com/invite/b2ad24ec5dbb4694a36ef4ab616264e0/)
 
 There is also [a longer writeup on this project here](https://www.placecard.me/blog/django-wedding-website/).
@@ -33,8 +32,6 @@ It is completely customizable to your needs and the content is laid out in stand
 - Configurable content sections for every aspect of your site that you want
 - A set of different styles you can use for different sections
 
-![Hero Section of Wedding Website](https://raw.githubusercontent.com/czue/django-wedding-website/master/screenshots/hero-page.png)
-
 ### Guest management
 
 The guest management functionality acts as a central place for you to manage your entire guest list.
@@ -49,8 +46,6 @@ There's also a field to track whether the party is invited to the rehearsal dinn
 #### Guest model
 
 The `Guest` model contains all of your individual guests.
-In addition to standard name/email it has fields to represent whether the guest is a child (for kids meals/pricing differences),
-and, after sending invitations, marking whether the guest is attending and what meal they are having.
 
 #### Excel import/export
 
@@ -59,15 +54,6 @@ This allows you to build your guest list in Excel and get it into the system in 
 It also lets you export the data to share with others or for whatever else you need.
 
 See the `import_guests` management command for more details and `bigday/guests/tests/data` for sample file formats.
-
-### Save the Dates
-
-The app comes with a built-in cross-client and mobile-friendly email template for save the dates (see `save_the_date.html`).
-
-You can create multiple save the dates and send them out either randomly or by `Party` type (useful if you want to send formal
-invitations to some people and more playful ones to others).
-
-See `save_the_date.py` and `SAVE_THE_DATE_CONTEXT_MAP` for customizing your save the dates.
 
 ### Invitations and RSVPs
 
@@ -85,8 +71,6 @@ has to respond, people who haven't selected a meal, etc.
 It's a great way of tracking your big picture numbers in terms of how many guests to expect.
 
 Just access `/dashboard/` from an account with admin access. Your other guests won't be able to see it.
-
-![Wedding Dashboard](https://raw.githubusercontent.com/czue/django-wedding-website/master/screenshots/wedding-dashboard.png)
 
 ### Other details
 

@@ -13,9 +13,6 @@ from guests import csv_import
 from guests.invitation import get_invitation_context, INVITATION_TEMPLATE, guess_party_by_invite_id_or_404, \
     send_invitation_email
 from guests.models import Guest, Party
-from guests.save_the_date import get_save_the_date_context, send_save_the_date_email, SAVE_THE_DATE_TEMPLATE, \
-    SAVE_THE_DATE_CONTEXT_MAP
-
 
 class GuestListView(ListView):
     model = Guest
@@ -33,11 +30,10 @@ def export_guests(request):
 def dashboard(request):
     parties_with_pending_invites = Party.objects.filter(
         is_invited=True, is_attending=None
-    ).order_by('category', 'name')
+    )
     parties_with_unopen_invites = parties_with_pending_invites.filter(invitation_opened=None)
     parties_with_open_unresponded_invites = parties_with_pending_invites.exclude(invitation_opened=None)
     attending_guests = Guest.objects.filter(is_attending=True)
-    category_breakdown = attending_guests.values('party__category').annotate(count=Count('*'))
     return render(request, 'guests/dashboard.html', context={
         'guests': Guest.objects.filter(is_attending=True).count(),
         'possible_guests': Guest.objects.filter(party__is_invited=True).exclude(is_attending=False).count(),
@@ -48,7 +44,6 @@ def dashboard(request):
         'parties_with_open_unresponded_invites': parties_with_open_unresponded_invites,
         'unopened_invite_count': parties_with_unopen_invites.count(),
         'total_invites': Party.objects.filter(is_invited=True).count(),
-        'category_breakdown': category_breakdown,
     })
 
 
@@ -109,25 +104,6 @@ def invitation_email_test(request, invite_id):
     party = guess_party_by_invite_id_or_404(invite_id)
     send_invitation_email(party, recipients=[settings.DEFAULT_WEDDING_TEST_EMAIL])
     return HttpResponse('sent!')
-
-
-def save_the_date_random(request):
-    template_id = random.choice(SAVE_THE_DATE_CONTEXT_MAP.keys())
-    return save_the_date_preview(request, template_id)
-
-
-def save_the_date_preview(request, template_id):
-    context = get_save_the_date_context(template_id)
-    context['email_mode'] = False
-    return render(request, SAVE_THE_DATE_TEMPLATE, context=context)
-
-
-@login_required
-def test_email(request, template_id):
-    context = get_save_the_date_context(template_id)
-    send_save_the_date_email(context, [settings.DEFAULT_WEDDING_TEST_EMAIL])
-    return HttpResponse('sent!')
-
 
 def _base64_encode(filepath):
     with open(filepath, "rb") as image_file:

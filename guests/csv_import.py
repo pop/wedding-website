@@ -16,13 +16,11 @@ def import_guests(path):
             if first_row:
                 first_row = False
                 continue
-            party_name, first_name, last_name, party_type, category, is_invited, email = row[:8]
+            party_name, first_name, last_name, is_invited, email = row[:8]
             if not party_name:
                 print ('skipping row {}'.format(row))
                 continue
             party = Party.objects.get_or_create(name=party_name)[0]
-            party.type = party_type
-            party.category = category
             party.is_invited = _is_true(is_invited)
             if not party.invitation_id:
                 party.invitation_id = uuid.uuid4().hex
@@ -38,8 +36,7 @@ def import_guests(path):
 
 def export_guests():
     headers = [
-        'party_name', 'first_name', 'last_name', 'party_type',
-        'category', 'is_invited', 'is_attending',
+        'party_name', 'first_name', 'last_name', 'is_invited', 'is_attending',
         'rehearsal_dinner', 'email', 'comments'
     ]
     file = io.StringIO()
@@ -52,8 +49,6 @@ def export_guests():
                     party.name,
                     guest.first_name,
                     guest.last_name,
-                    party.type,
-                    party.category,
                     party.is_invited,
                     guest.is_attending,
                     party.rehearsal_dinner,

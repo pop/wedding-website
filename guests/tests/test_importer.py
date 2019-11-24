@@ -33,19 +33,9 @@ class GuestImporterTest(TestCase):
             else:
                 self.assertTrue(party.is_invited)
 
-    def test_party_type(self):
-        for guest in Guest.objects.all():
-            if guest.last_name == 'Stark':
-                self.assertEqual('formal', guest.party.type)
-            else:
-                self.assertEqual('fun', guest.party.type)
-
     def test_email(self):
         self.assertEqual('ned@winterfell.gov', Guest.objects.get(first_name='Ned').email)
 
     def test_email_default(self):
         self.assertEqual(None, Guest.objects.get(first_name='Tyrion').email)
 
-    def test_category(self):
-        self.assertEqual('starks', Party.objects.get(name='The Starks').category)
-        self.assertEqual('lannisters', Party.objects.get(name='Jaime').category)

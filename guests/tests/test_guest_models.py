@@ -7,7 +7,6 @@ class PartyTest(TestCase):
     def setUp(self):
         self.party = Party.objects.create(
             name='The Starks',
-            type='formal',
         )
         self.guest1 = Guest.objects.create(
             party=self.party,
