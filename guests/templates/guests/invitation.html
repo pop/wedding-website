@@ -1,50 +1,53 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block page_head %}
-    <link href="{% static 'bigday/css/invitation.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<link href="{% static 'invitation/css/invitation.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
 {% endblock %}
 {% block page_content %}
-    <div class="container" id="invitation-body">
-        <section class="col-md-6 text-center">
-            <div id="invitation-details">
-            <h2>Lucy and Eli</h2>
-            <p class="lead">
-                August 8, 2020 at 11 am<br>
-                The Laurelhurst Club<br>
-                Portland, OR
-            </p>
-            </div>
-        </section>
-        <section class="col-md-6">
-        <form data-toggle="validator" id="invitation-details" class="form-horizontal" method="post">
-            <h2 id="rsvp-header" class="text-center">RSVP</h2>
-            <div class="clearfix"></div>
-            {% csrf_token %}
-            {% for guest in party.in_default_order.all %}
-            <div class="form-group">
-                {% with 'attending-'|add:guest.unique_id as attending_label %}
-                <label for="{{ attending_label }}" class="col-sm-3 control-label">{{ guest.name }}</label>
-                <label class="radio-inline">
-                    <input class="attending-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> will attend
-                </label>
-                <label class="radio-inline">
-                    <input class="attending-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required> will not attend
-                </label>
-                {% endwith %}
-            </div>
-            {% endfor %}
-            <div class="form-group col-sm-12">
-                <input type="text" name="comments" class="form-control" placeholder="Questions/comments/well wishes" >
-            </div>
-            <div class="form-group">
-                <div class="text-center">
-                    <input type="submit" class="btn btn-primary" value="Submit Response" />
-                </div>
-            </div>
-        </form>
-        </section>
-    </div>
+<div class="invitation-body">
+  <!--<div class='polaroid'>
+    <img src="{% static 'invitation/images/deck-photo.jpg' %}">
+  </div>-->
+  <div class="invitation-details">
+    <p>Please join</p>
+    <h2>Lucy & Eli</h2>
+    <p>to celebrate their wedding on</p><br>
+    <h5>August 8, 2020 at 11 am<br>
+      The Laurelhurst Club in Portland, OR<br>
+      Brunch and frivolity to follow
+    </h5><br><br>
+    <form data-toggle="validator" id="rsvp" class="form-horizontal" method="post">
+      <h3 id="rsvp-header" class="text-center">R.S.V.P.</h3>
+      <div class="clearfix"></div>
+      {% csrf_token %}
+      {% for guest in party.guest_set.all %}
+      <div class="form-group">
+        {% with 'attending-'|add:guest.unique_id as attending_label %}
+        <label for="{{ attending_label }}" class="col-sm-6 control-label">{{ guest.name }}</label>
+        <div class='buttons col-sm-6'>
+          <label>
+            <input class="attending-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> Accept
+          </label><br>
+          <label>
+            <input class="attending-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required> Decline
+          </label>
+        </div>
+        {% endwith %}
+      </div>
+      {% endfor %}
+      <div class="form-group">
+        <p>Anything you'd like us to know?</p>
+        <textarea name="comments" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <div class="text-center">
+          <input type="submit" class="btn btn-primary" value="Respond" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}
 {% block page_js %}
-    <script src="{% static 'validator.js' %}"></script>
+<script src="{% static 'validator.js' %}"></script>
 {% endblock %}

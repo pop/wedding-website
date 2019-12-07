@@ -27,7 +27,7 @@ class Party(models.Model):
 
     @classmethod
     def in_default_order(cls):
-        return cls.objects.order_by('name', '-is_invited')
+        return cls.objects
 
     @property
     def any_guests_attending(self):
@@ -53,7 +53,6 @@ class Guest(models.Model):
 
     @property
     def unique_id(self):
-        # convert to string so it can be used in the "add" templatetag
         return str(self.pk)
 
     def __str__(self):

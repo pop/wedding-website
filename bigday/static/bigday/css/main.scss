@@ -1,0 +1,460 @@
+@import 'variables';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font: $white;
+}
+
+body {
+  font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+}
+
+hr {
+  max-width: 50px;
+  border-color: $red;
+  border-width: 3px;
+}
+
+hr.light {
+  border-color: $white;
+}
+
+a {
+  color: $red;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+
+a:hover,
+a:focus {
+  color: $red;
+  opacity: 0.4;
+  text-decoration: none;
+}
+
+#first-link {
+  color: $dark-red;
+}
+
+#second-link {
+  color: $red;
+}
+
+#third-link {
+  color: $orange;
+}
+
+#fourth-link {
+  color: $light-orange;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+h2 {
+  font-size: 56px;
+}
+
+h3 {
+  font-size: 44px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 28px;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  //font-family: 'Open Sans', sans-serif;
+}
+
+
+.red {
+  background-color: $red;
+
+  a {
+    color: $white;
+  }
+}
+
+.orange {
+  background-color: $light-orange;
+  a {
+    color: $red;
+  }
+}
+
+.pink {
+  background-color: $pink;
+  color: $white;
+
+  a {
+    color: $red;
+  }
+}
+
+.light-pink {
+  background-color: $light-pink;
+  color: $dark
+
+  a {
+    color: $red;
+  }
+}
+
+.text-faded {
+  color: rgba(255,255,255,.7);
+}
+
+section {
+  padding: 50px 0;
+}
+
+aside {
+  padding: 50px 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.navbar-default {
+  background-color: $white;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+  font-weight: 700;
+  color: $red;
+}
+
+.navbar-default .nav > li>a:hover,
+.navbar-default .nav>li>a:focus:hover {
+  color: $red;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  color: rgb(28,56,81);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#main-header {
+  background-image: url('../images/index.gif');
+  margin-top: 50px;
+}
+
+header .header-content {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 100px 20px;
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+
+  .btn {
+    font-size: 36px;
+  }
+}
+
+.intro-info {
+  font-size: 30px;
+}
+
+#second-header {
+  background-image: url('../images/chapmans-peak-view.jpg');
+}
+
+@media(min-width:768px) {
+  header {
+    min-height: 100%;
+  }
+
+  header.secondary {
+    min-height: 30%;
+  }
+
+ header .header-content {
+    position: absolute;
+    top: 15%;
+    padding: 0 50px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+header .header-content .header-content-inner {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+}
+
+header .header-content .header-content-inner p {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 80%;
+  font-size: 18px;
+}
+}
+
+.section-heading {
+  margin-top: 0;
+}
+
+.service-box {
+  margin: 50px auto 0;
+  max-width: 400px;
+}
+
+.service-box p {
+  margin-bottom: 0;
+}
+
+.charity-box {
+  margin: 50px auto 0;
+  max-width: 400px;
+}
+
+.portfolio-box {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+
+.portfolio-box .portfolio-box-caption {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: $white;
+  opacity: 0;
+  background: rgba(#222, 0.5);
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  padding: 0 15px;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  font-size: 30px;
+}
+
+.portfolio-box:hover .portfolio-box-caption {
+  opacity: 1;
+}
+
+#navigation {
+  a:hover {
+    opacity: 1;
+  }
+}
+
+.call-to-action h2 {
+  margin: 0 auto 20px;
+}
+
+.text-primary {
+  color: $red;
+}
+
+.no-gutter > [class*=col-] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-default {
+  border-color: $white;
+  color: $white;
+  background-color: $red;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  border-color: $darker;
+  opacity: 0.6;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  border-color: $white;
+  background-color: $white;
+}
+
+.btn-default .badge {
+  color: $white;
+  background-color: $dark;
+}
+
+.btn-primary {
+  border-color: $red;
+  color: $white;
+  background-color: $red;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  border-color: $red;
+  background-color: $white;
+  color: $red;
+  opacity: 1;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  border-color: $red;
+  background-color: $red;
+}
+
+.btn-primary .badge {
+  color: $red;
+  background-color: $white;
+}
+
+.btn {
+  border: 0;
+}
+
+.btn-xl {
+  padding: 15px 30px;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  color: $white;
+  background: $dark;
+}
+
+::selection {
+  text-shadow: none;
+  color: $white;
+  background: $dark;
+}
+
+img::selection {
+  color: $white;
+  background: 0 0;
+}
+
+img::-moz-selection {
+  color: $white;
+  background: 0 0;
+}
+
+body {
+  webkit-tap-highlight-color: $dark;
+
+}
+
+#wedding {
+  img {
+    height: 2em;
+  }
+}
+
+#footer {
+  background-image: url('../images/bananas.png');
+  color: $dark;
+  padding: 30px;
+  font-weight: 700;
+
+  a {
+    color: $red;
+  }
+}

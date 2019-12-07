@@ -1,48 +1,60 @@
-{% extends 'guests/email_templates/email_base.html' %}
 {% load staticfiles %}
-{% block header_image %}{% endblock %}
-{% block lead_copy %}
-    <tr>
-        <td>
-            <table border="0" cellpadding="0" cellspacing="0" align="center">
-                <tbody>
-                <tr>
-                    <td>
-                        <a href="{% if email_mode %}{{ site_url }}{% endif %}{% url 'invitation' invitation_id %}" target="_blank"
-                           style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; background-color: #337ab7; border-top: 12px solid #337ab7; border-bottom: 12px solid #337ab7; border-right: 18px solid #337ab7; border-left: 18px solid #337ab7; display: inline-block;">
-                            View Invitation
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-{% endblock %}
-{% block main_image %}
-    {% with "invitation/images/"|add:main_image as main_static_url %}
-    <img src="{% if email_mode %}cid:{{ main_image }}{% else %}{% static main_static_url %}{% endif %}"
-         alt="{{ couple }}"
-         style="display: block; padding: 0; color: #666666;"
-         class="img-max" border="0"
-         height="512" width="512">
-    {% endwith %}
-{% endblock %}
-{% block main_copy %}
-    <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
-        <tbody>
-        <tr>
-            <td style="padding: 20px 0 0 0; font-size: 16px; line-height: 20px; font-family: Helvetica, Arial, sans-serif; color: {{ font_color }};"
-                class="padding-copy" align="center">
-                {{ couple }}'s Wedding<br>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-{% endblock %}
-{% block footer_content %}
-    Please <a href="{% if email_mode %}{{ site_url }}{% endif %}{% url 'invitation' invitation_id %}">view the invitation online</a> to rsvp.<br>
-    {% if email_mode %}
-        <p><a href="{{ site_url }}">{{ site_url }}</a></p>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if not email_mode %}
+    {% include "partials/google-analytics.html" %}
     {% endif %}
-{% endblock %}
+  </head>
+  <body>
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td align="center" width="100%">
+            <a href="{% if email_mode %}{{ site_url }}{% endif %}{% url 'invitation' invitation_id %}">
+              <img src="https://i.imgur.com/UyZVsai.jpg">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td align="center">
+            <table align="center" border="0" width="100%" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td style="padding: 20px 0px;" align="center">
+                    <table class="responsive-table" align="center" border="0" width="500" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="padding-copy"
+                              style="font-size: 12px; line-height: 18px; font-family: Montserrat, Helvetica, Arial, sans-serif; color:#666666;"
+                              align="center">
+                            <span class="appleFooter" style="color:#666666; align-content:center;">
+                              Please <a href="{% if email_mode %}{{ site_url }}{% endif %}{% url 'invitation' invitation_id %}">view the invitation online</a> to rsvp.<br>
+                              {% if email_mode %}
+                              <p><a href="{{ site_url }}">{{ site_url }}</a></p>
+                              {% endif %}
+
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--
+      Based on a template courtesy of Litmus (@litmusapp)
+    -->
+  </body>
+</html>

@@ -24,14 +24,11 @@ def guess_party_by_invite_id_or_404(invite_id):
 
 def get_invitation_context(party):
     return {
-        'title': "Lion's Head",
-        'main_image': 'bride-groom.png',
-        'main_color': '#fff3e8',
-        'font_color': '#666666',
-        'page_title': "Cory and Rowena - You're Invited!",
-        'preheader_text': "You are invited!",
+        'page_title': "Lucy & Eli - you're invited!",
+        'main_image': "view.jpg",
         'invitation_id': party.invitation_id,
         'party': party,
+        'guests': ' & '.join([m.first_name for m in party.guest_set.all()])
     }
 
 
@@ -45,16 +42,14 @@ def send_invitation_email(party, test_only=False, recipients=None):
     context = get_invitation_context(party)
     context['email_mode'] = True
     context['site_url'] = settings.WEDDING_WEBSITE_URL
-    context['couple'] = settings.BRIDE_AND_GROOM
     template_html = render_to_string(INVITATION_TEMPLATE, context=context)
-    template_text = "You're invited to {}'s wedding. To view this invitation, visit {} in any browser.".format(
+    template_text = "You're invited to {}'s wedding! View your invitation at {}".format(
         settings.BRIDE_AND_GROOM,
         reverse('invitation', args=[context['invitation_id']])
     )
-    subject = "You're invited"
+    subject = "Eli & Lucy Are Getting Married!"
     # https://www.vlent.nl/weblog/2014/01/15/sending-emails-with-embedded-images-in-django/
     msg = EmailMultiAlternatives(subject, template_text, settings.DEFAULT_WEDDING_FROM_EMAIL, recipients,
-                                 cc=settings.WEDDING_CC_LIST,
                                  reply_to=[settings.DEFAULT_WEDDING_REPLY_EMAIL])
     msg.attach_alternative(template_html, "text/html")
     msg.mixed_subtype = 'related'
@@ -71,7 +66,7 @@ def send_invitation_email(party, test_only=False, recipients=None):
 
 
 def send_all_invitations(test_only, mark_as_sent):
-    to_send_to = Party.in_default_order().filter(is_invited=True, invitation_sent=None).exclude(is_attending=False)
+    to_send_to = Party.objects.filter(is_invited=True, invitation_sent=None).exclude(is_attending=False)
     for party in to_send_to:
         send_invitation_email(party, test_only=test_only)
         if mark_as_sent:

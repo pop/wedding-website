@@ -1,0 +1,177 @@
+@import '../../../../bigday/static/bigday/css/variables.scss';
+
+body {
+  background: url('../images/table-top.jpg') repeat center center fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  position: absolute;
+  top: 50px;
+  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 900;
+}
+
+.invitation-details {
+  padding: 10vh;
+  background-color: $offwhite;
+  border: 2px solid #000;
+  outline: 10px solid $offwhite;
+  color: #444;
+  width: 60vw;
+  max-width: 800px;
+  min-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 10em;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  h3 {
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  h5 {
+    font-size: 1.8em;
+  }
+
+  label {
+    font-size: 1.5em;
+  }
+}
+
+#invitation-body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons {
+  text-align: left;
+}
+
+.form-group {
+  padding: 20px 0px;
+
+  label {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+
+  .control-label {
+    padding: 0 10px;
+    margin: 0;
+  }
+}
+
+.form-control {
+  border: 2px solid #222;
+  width: 70%;
+  min-width: 150px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+.attending-radio {
+  border: 5px solid;
+  border-radius: 100%;
+}
+
+.btn {
+  background-color: $red;
+}
+
+#footer {
+  color: #222;
+  padding: 30px;
+  font-weight: 700;
+
+  a {
+    color: #C80122; 
+  }
+}
+
+/* CLIENT-SPECIFIC STYLES */
+#outlook a {
+  padding: 0;
+}
+
+/* Force Outlook to provide a "view in browser" message */
+.ReadMsgBody {
+  width: 100%;
+}
+
+.ExternalClass {
+  width: 100%;
+}
+
+/* Force Hotmail to display emails at full width */
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+  line-height: 100%;
+}
+
+/* Force Hotmail to display normal line spacing */
+body, table, td, a {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Prevent WebKit and Windows mobile changing default text sizes */
+table, td {
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Allow smoother rendering of resized image in Internet Explorer */
+
+/* RESET STYLES */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse !important;
+}
+
+body {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+}
+
+/* iOS BLUE LINKS */
+.appleBody a {
+  color: #68440a;
+  text-decoration: none;
+}
+
+.appleFooter a {
+  color: #999999;
+  text-decoration: none;
+}
+
+/* MOBILE STYLES */
+@media screen and (max-width: 525px) {
+
+}

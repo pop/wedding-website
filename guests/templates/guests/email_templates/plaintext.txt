@@ -1,0 +1,6 @@
+Hello {{ guests }},
+
+We would love to have you join us for Lucy and Eli's wedding. Please visit {{ site_url }}{% url 'invitation' invitation_id %} to view your invitation and RSVP!
+
+Love,
+Lucy and Eli

@@ -28,10 +28,7 @@ class GuestImporterTest(TestCase):
 
     def test_is_invited(self):
         for party in Party.objects.all():
-            if party.name == 'Jaime':
-                self.assertFalse(party.is_invited)
-            else:
-                self.assertTrue(party.is_invited)
+            self.assertTrue(party.is_invited)
 
     def test_email(self):
         self.assertEqual('ned@winterfell.gov', Guest.objects.get(first_name='Ned').email)
