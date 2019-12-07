@@ -4,106 +4,135 @@ body {
   width: 100%;
   height: 100%;
   font-size: 16px;
-  font: #FFF; }
+  font: #FFF;
+}
 
 body {
-  font-family: Merriweather,'Helvetica Neue',Arial,sans-serif; }
+  font-family: Merriweather, "Helvetica Neue", Arial, sans-serif;
+}
 
 hr {
   max-width: 50px;
   border-color: #C80122;
-  border-width: 3px; }
+  border-width: 3px;
+}
 
 hr.light {
-  border-color: #FFF; }
+  border-color: #FFF;
+}
 
 a {
   color: #C80122;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s; }
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
 
 a:hover,
 a:focus {
   color: #C80122;
   opacity: 0.4;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 #first-link {
-  color: #B60029; }
+  color: #B60029;
+}
 
 #second-link {
-  color: #C80122; }
+  color: #C80122;
+}
 
 #third-link {
-  color: #FF5503; }
+  color: #FF5503;
+}
 
 #fourth-link {
-  color: #FF8900; }
+  color: #FF8900;
+}
 
 h2 {
-  font-size: 56px; }
+  font-size: 56px;
+}
 
 h3 {
-  font-size: 44px; }
+  font-size: 44px;
+}
 
 h4 {
-  font-size: 36px; }
+  font-size: 36px;
+}
 
 h5 {
-  font-size: 28px; }
+  font-size: 28px;
+}
 
 p {
   margin-bottom: 20px;
   font-size: 16px;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
 .red {
-  background-color: #C80122; }
-  .red a {
-    color: #FFF; }
+  background-color: #C80122;
+}
+.red a {
+  color: #FFF;
+}
 
 .orange {
-  background-color: #FF8900; }
-  .orange a {
-    color: #C80122; }
+  background-color: #FF8900;
+}
+.orange a {
+  color: #C80122;
+}
 
 .pink {
   background-color: #FCC1C1;
-  color: #FFF; }
-  .pink a {
-    color: #C80122; }
+  color: #FFF;
+}
+.pink a {
+  color: #C80122;
+}
 
 .light-pink {
   background-color: #FFE2D0;
   color: #222 a;
-    color-color: #C80122; }
+  color-color: #C80122;
+}
 
 .text-faded {
-  color: rgba(255, 255, 255, 0.7); }
+  color: rgba(255, 255, 255, 0.7);
+}
 
 section {
-  padding: 50px 0; }
+  padding: 50px 0;
+}
 
 aside {
-  padding: 50px 0; }
+  padding: 50px 0;
+}
 
 .no-padding {
-  padding: 0; }
+  padding: 0;
+}
 
 .navbar-default {
   background-color: #FFF;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s; }
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
 
 .navbar-default .navbar-header .navbar-brand {
   font-weight: 700;
-  color: #C80122; }
+  color: #C80122;
+}
 
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
-  color: #C80122; }
+  color: #C80122;
+}
 
 header {
   position: relative;
@@ -115,11 +144,13 @@ header {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover; }
+  -o-background-size: cover;
+}
 
 #main-header {
   background-image: url("../images/index.gif");
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 header .header-content {
   position: absolute;
@@ -128,59 +159,61 @@ header .header-content {
   padding: 100px 20px;
   text-align: center;
   color: #FFF;
-  font-weight: 700; }
-  header .header-content .btn {
-    font-size: 36px; }
+  font-weight: 700;
+}
+header .header-content .btn {
+  font-size: 36px;
+}
 
 .intro-info {
-  font-size: 30px; }
-
-#second-header {
-  background-image: url("../images/chapmans-peak-view.jpg"); }
+  font-size: 30px;
+}
 
 @media (min-width: 768px) {
   header {
-    min-height: 100%; }
+    min-height: 100%;
+  }
 
   header.secondary {
-    min-height: 30%; }
-
-  header .header-content {
-    position: absolute;
-    top: 15%;
-    padding: 0 50px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    min-height: 30%;
+  }
 
   header .header-content .header-content-inner {
     margin-right: auto;
     margin-left: auto;
-    max-width: 1000px; }
+    max-width: 1000px;
+  }
 
   header .header-content .header-content-inner p {
     margin-right: auto;
     margin-left: auto;
     max-width: 80%;
-    font-size: 18px; } }
+    font-size: 18px;
+  }
+}
 .section-heading {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 .service-box {
   margin: 50px auto 0;
-  max-width: 400px; }
+  max-width: 400px;
+}
 
 .service-box p {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .charity-box {
   margin: 50px auto 0;
-  max-width: 400px; }
+  max-width: 400px;
+}
 
 .portfolio-box {
   display: block;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .portfolio-box .portfolio-box-caption {
   display: block;
@@ -192,47 +225,57 @@ header .header-content {
   color: #FFF;
   opacity: 0;
   background: rgba(34, 34, 34, 0.5);
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s; }
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
   position: absolute;
   top: 50%;
   width: 100%;
   text-align: center;
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+}
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  padding: 0 15px; }
+  padding: 0 15px;
+}
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .portfolio-box:hover .portfolio-box-caption {
-  opacity: 1; }
+  opacity: 1;
+}
 
 #navigation a:hover {
-  opacity: 1; }
+  opacity: 1;
+}
 
 .call-to-action h2 {
-  margin: 0 auto 20px; }
+  margin: 0 auto 20px;
+}
 
 .text-primary {
-  color: #C80122; }
+  color: #C80122;
+}
 
 .no-gutter > [class*=col-] {
   padding-right: 0;
-  padding-left: 0; }
+  padding-left: 0;
+}
 
 .btn-default {
   border-color: #FFF;
   color: #FFF;
   background-color: #C80122;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s; }
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
 
 .btn-default:hover,
 .btn-default:focus,
@@ -241,12 +284,14 @@ header .header-content {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   border-color: #ededed;
-  opacity: 0.6; }
+  opacity: 0.6;
+}
 
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  background-image: none; }
+  background-image: none;
+}
 
 .btn-default.disabled,
 .btn-default[disabled],
@@ -267,19 +312,22 @@ fieldset[disabled] .btn-default:active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
   border-color: #FFF;
-  background-color: #FFF; }
+  background-color: #FFF;
+}
 
 .btn-default .badge {
   color: #FFF;
-  background-color: #222; }
+  background-color: #222;
+}
 
 .btn-primary {
   border-color: #C80122;
   color: #FFF;
   background-color: #C80122;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s; }
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
 
 .btn-primary:hover,
 .btn-primary:focus,
@@ -290,12 +338,14 @@ fieldset[disabled] .btn-default.active {
   border-color: #C80122;
   background-color: #FFF;
   color: #C80122;
-  opacity: 1; }
+  opacity: 1;
+}
 
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  background-image: none; }
+  background-image: none;
+}
 
 .btn-primary.disabled,
 .btn-primary[disabled],
@@ -316,48 +366,60 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
   border-color: #C80122;
-  background-color: #C80122; }
+  background-color: #C80122;
+}
 
 .btn-primary .badge {
   color: #C80122;
-  background-color: #FFF; }
+  background-color: #FFF;
+}
 
 .btn {
-  border: 0; }
+  border: 0;
+}
 
 .btn-xl {
-  padding: 15px 30px; }
+  padding: 15px 30px;
+}
 
 ::-moz-selection {
   text-shadow: none;
   color: #FFF;
-  background: #222; }
+  background: #222;
+}
 
 ::selection {
   text-shadow: none;
   color: #FFF;
-  background: #222; }
+  background: #222;
+}
 
 img::selection {
   color: #FFF;
-  background: 0 0; }
+  background: 0 0;
+}
 
 img::-moz-selection {
   color: #FFF;
-  background: 0 0; }
+  background: 0 0;
+}
 
 body {
-  webkit-tap-highlight-color: #222; }
+  webkit-tap-highlight-color: #222;
+}
 
 #wedding img {
-  height: 2em; }
+  height: 2em;
+}
 
 #footer {
   background-image: url("../images/bananas.png");
   color: #222;
   padding: 30px;
-  font-weight: 700; }
-  #footer a {
-    color: #C80122; }
+  font-weight: 700;
+}
+#footer a {
+  color: #C80122;
+}
 
 /*# sourceMappingURL=main.css.map */

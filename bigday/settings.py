@@ -17,10 +17,17 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+#DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 if DEBUG:
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                }
+            }
 else:
     SECRET_KEY = config('SECRET_KEY')
     DATABASES = {
