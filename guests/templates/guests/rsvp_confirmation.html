@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block page_head %}
-    <link href="{% static 'bigday/css/rsvp-confirmation.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<link href="{% static 'invitation/css/invitation.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
 {% endblock %}
 {% block page_content %}
-    <div class="layer"></div>
-    <div class="container" id="main">
-        <h2>Thanks for your response!</h2>
-        {% if party.any_guests_attending %}
-        <p>We can't wait to celebrate with you!</p>
-        {% else %}
-        <p>We're sorry you won't be able to join us. We look forward to catching up with you some other time!
-        {% endif %}
-        <p>
-            - Lucy and Eli
-        </p>
-    </div>
+<div class="invitation-body">
+  <div class="invitation-details">
+    <h3>Thanks for your response!</h3><br><br>
+    {% if party.any_guests_attending %}
+    <h5>We can't wait to celebrate with you!<br>For more information about the wedding, visit <a href='https://lucyandeli.wedding'>https://lucyandeli.wedding</a></h5>
+    {% else %}
+    <h5>We're sorry you won't be able to join us.
+    {% endif %}
+    <br><br>If your plans change, please email rsvp@lucyandeli.wedding</h5>
+    <br><br><h5>Love,<br>
+    Lucy & Eli
+    </h5>
+  </div>
+</div>
 {% endblock %}

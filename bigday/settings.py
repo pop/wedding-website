@@ -17,8 +17,8 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
+#DEBUG = True
 
 if DEBUG:
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -136,22 +136,13 @@ BRIDE_AND_GROOM = 'Lucy and Eli'
 # This is used in links in invitations
 WEDDING_WEBSITE_URL = 'http://lucyandeli.wedding'
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = False
-    EMAIL_HOST = '127.0.0.1'
-    EMAIL_PORT = 1025
-    EMAIL_HOST_USER = ''
-    EMAIL_HOST_PASSWORD = ''
-    DEFAULT_FROM_EMAIL = 'testing@example.com'
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = DEFAULT_WEDDING_REPLY_EMAIL
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    EMAIL_HOST_PASSWORD = 'oymkncldgarpusml'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = DEFAULT_WEDDING_REPLY_EMAIL
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = 'oymkncldgarpusml'
 
 try:
     from .localsettings import *

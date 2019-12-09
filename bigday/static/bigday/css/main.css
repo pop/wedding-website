@@ -73,34 +73,6 @@ p {
   line-height: 1.5;
 }
 
-.red {
-  background-color: #C80122;
-}
-.red a {
-  color: #FFF;
-}
-
-.orange {
-  background-color: #FF8900;
-}
-.orange a {
-  color: #C80122;
-}
-
-.pink {
-  background-color: #FCC1C1;
-  color: #FFF;
-}
-.pink a {
-  color: #C80122;
-}
-
-.light-pink {
-  background-color: #FFE2D0;
-  color: #222 a;
-  color-color: #C80122;
-}
-
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }

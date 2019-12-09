@@ -80,41 +80,6 @@ p {
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.5;
-  //font-family: 'Open Sans', sans-serif;
-}
-
-
-.red {
-  background-color: $red;
-
-  a {
-    color: $white;
-  }
-}
-
-.orange {
-  background-color: $light-orange;
-  a {
-    color: $red;
-  }
-}
-
-.pink {
-  background-color: $pink;
-  color: $white;
-
-  a {
-    color: $red;
-  }
-}
-
-.light-pink {
-  background-color: $light-pink;
-  color: $dark
-
-  a {
-    color: $red;
-  }
 }
 
 .text-faded {
@@ -303,7 +268,7 @@ header .header-content {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  border-color: $darker;
+  border-color: $gray;
   opacity: 0.6;
 }
 

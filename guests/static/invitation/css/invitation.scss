@@ -1,4 +1,4 @@
-@import '../../../../bigday/static/bigday/css/variables.scss';
+@import '../../../../bigday/static/bigday/css/_variables.scss';
 
 body {
   background: url('../images/table-top.jpg') repeat center center fixed;
@@ -8,7 +8,8 @@ body {
   background-size: contain;
   position: absolute;
   top: 50px;
-  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  //font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Merriweather', serif;
   font-weight: 900;
 }
 
@@ -21,6 +22,7 @@ body {
   width: 60vw;
   max-width: 800px;
   min-width: 500px;
+  min-height: 80vh;
   margin: 0 auto;
   text-align: center;
 
@@ -30,7 +32,7 @@ body {
   }
 
   h3 {
-    font-size: 5em;
+    font-size: 4em;
     font-family: 'Great Vibes', cursive;
   }
 
@@ -39,7 +41,62 @@ body {
   }
 
   label {
+    align-items: baseline;
     font-size: 1.5em;
+  }
+
+  .guest-name {
+    margin-top: 1px;
+  }
+}
+
+.invitation-email {
+  background: url('../images/tulips.jpg') no-repeat top center fixed;
+  outline: 2px solid #000;
+  outline-offset:-20px;
+  color: #000;
+  width: 60vw;
+  max-width: 800px;
+  min-width: 500px;
+  min-height: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 1000;
+  font-family: 'Merriweather';
+
+  .overlay {
+    padding: 10vh;
+    background: -moz-linear-gradient(top, rgba($offwhite, 1) 0%, rgba($offwhite, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba($offwhite,1) 0%,rgba($offwhite,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba($offwhite,1) 0%,rgba($offwhite,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+
+  h2 {
+    margin: 0 auto;
+    font-size: 12em;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  h3 {
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive;
+    margin: 0 auto;
+  }
+
+  h4 {
+    margin: 0 auto;
+    font-size: 1.7em;
+  }
+
+  h5 {
+    font-size: 1.5em;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 0.8em;
+    font-family: 'Merriweather';
+    margin: 0 auto;
   }
 }
 
@@ -66,6 +123,7 @@ body {
   .control-label {
     padding: 0 10px;
     margin: 0;
+    padding-left: 10vw;
   }
 }
 
@@ -77,23 +135,56 @@ body {
   margin: 0 auto;
 }
 
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #fff;
+  height: .8em;
+  width: .8em;
+  border: 3px solid $red;
+  border-radius: 50%;
+  cursor: pointer;     
 
-.attending-radio {
-  border: 5px solid;
-  border-radius: 100%;
+  &:hover {
+    background-color: rgba($red, 0.5);
+  }
+
+  &:checked {
+    background-color: $red;
+  }
 }
 
 .btn {
   background-color: $red;
+  padding: 20px;
+  margin: 40px;
+  font-size: 1.3em;
+  color: $white;
+  border: 2px solid $white;
+}
+
+.form-group {
+  .btn {
+    margin: 0 auto;
+  }
+
+  .btn:hover,
+  .btn:focus{
+    background-color: rgba($red, 0.4);
+    color: $white;
+  }
 }
 
 #footer {
+  background-color: $offwhite;
+  padding: 20px;
+  margin: 0 auto;
   color: #222;
-  padding: 30px;
-  font-weight: 700;
-
   a {
-    color: #C80122; 
+    color: $red; 
   }
 }
 

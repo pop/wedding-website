@@ -4,18 +4,38 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bootstrap-3.3.6-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'invitation/css/invitation.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css">
+
     {% if not email_mode %}
     {% include "partials/google-analytics.html" %}
     {% endif %}
   </head>
-  <body>
+  <body style='background: #fff'>
     <table border="0" width="100%" cellpadding="0" cellspacing="0">
       <tbody>
         <tr>
           <td align="center" width="100%">
             <a href="{% if email_mode %}{{ site_url }}{% endif %}{% url 'invitation' invitation_id %}">
-              <img src="https://i.imgur.com/UyZVsai.jpg">
-            </a>
+              <img style="max-width: 500px;" src="https://i.imgur.com/7cQmfr6.png" class="img-responsive" alt="">
+              <!--<div class='invitation-email'>
+                <div class="overlay">
+                <h4>Lucy & Eli</h4>
+                <p>are</p><br>
+                <h3>Getting Married!</h3><br>
+                <h5>August 8, 2020<br>Portland, OR</h5>
+                <br><br><br>
+
+                <h4>We would love to have you to join us!</h4>
+
+              <button class='btn'>R.S.V.P</button>
+                </div>
+              </div>-->
+              </a>
           </td>
         </tr>
       </tbody>
@@ -26,6 +46,11 @@
           <td align="center">
             <table align="center" border="0" width="100%" cellpadding="0" cellspacing="0">
               <tbody>
+                <tr>
+                  <td style="padding: 20px" align="center">
+                    <h4>For more information about the wedding visit <a href='https://lucyandeli.wedding'>https://lucyandeli.wedding</a></h4>
+                  </td>
+                </tr>
                 <tr>
                   <td style="padding: 20px 0px;" align="center">
                     <table class="responsive-table" align="center" border="0" width="500" cellpadding="0" cellspacing="0">

@@ -25,7 +25,7 @@ def guess_party_by_invite_id_or_404(invite_id):
 def get_invitation_context(party):
     return {
         'page_title': "Lucy & Eli - you're invited!",
-        'main_image': "view.jpg",
+        'main_image': "table-top.jpg",
         'invitation_id': party.invitation_id,
         'party': party,
         'guests': ' & '.join([m.first_name for m in party.guest_set.all()])

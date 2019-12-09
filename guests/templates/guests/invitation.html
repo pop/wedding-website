@@ -5,9 +5,6 @@
 {% endblock %}
 {% block page_content %}
 <div class="invitation-body">
-  <!--<div class='polaroid'>
-    <img src="{% static 'invitation/images/deck-photo.jpg' %}">
-  </div>-->
   <div class="invitation-details">
     <p>Please join</p>
     <h2>Lucy & Eli</h2>
@@ -17,19 +14,30 @@
       Brunch and frivolity to follow
     </h5><br><br>
     <form data-toggle="validator" id="rsvp" class="form-horizontal" method="post">
-      <h3 id="rsvp-header" class="text-center">R.S.V.P.</h3>
+      <h3 class="text-center">R. S. V. P.</h3>
       <div class="clearfix"></div>
       {% csrf_token %}
       {% for guest in party.guest_set.all %}
       <div class="form-group">
         {% with 'attending-'|add:guest.unique_id as attending_label %}
-        <label for="{{ attending_label }}" class="col-sm-6 control-label">{{ guest.name }}</label>
+        <label for="{{ attending_label }}" class="col-sm-6 control-label guest-name">{{ guest.name }}</label>
         <div class='buttons col-sm-6'>
           <label>
-            <input class="attending-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> Accept
+            <input class="attending-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required>
+            {% if 'Will you' in guest.name %}
+            Yes
+            {% else %}
+            Accept
+            {% endif %}
           </label><br>
           <label>
-            <input class="attending-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required> Decline
+            <input class="attending-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required>
+            {% if 'Will you' in guest.name %}
+            No
+            {% else %}
+            Decline
+            {% endif %}
+
           </label>
         </div>
         {% endwith %}
