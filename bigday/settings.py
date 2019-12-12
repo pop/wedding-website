@@ -31,10 +31,11 @@ if DEBUG:
 else:
     SECRET_KEY = config('SECRET_KEY')
     DATABASES = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL', default='')
-        )
-    }
+            'default': dj_database_url.config(
+                default=config('HEROKU_POSTGRESQL_ORANGE_URL', default='')
+                )
+            }
+    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 ALLOWED_HOSTS = ['*']
 
@@ -153,3 +154,21 @@ except ImportError:
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+#LOGGING = {
+#        'version': 1,
+#        'disable_existing_loggers': False,
+#        'handlers': {
+#            'console':{
+#                'class':'logging.StreamHandler',
+#                'stream': sys.stdout
+#                }
+#            },
+#        'loggers': {
+#            'django': {
+#                'handlers': ['console'],
+#                'level': 'DEBUG',
+#                'propagate': True,
+#                }
+#            }
+#        }

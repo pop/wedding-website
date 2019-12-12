@@ -7,3 +7,4 @@ localsettings.py
 static_root
 _working/
 data/
+Dockerfile
