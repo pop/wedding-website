@@ -1,12 +1,35 @@
 import csv
 import io
 import uuid
+
+from tempfile import NamedTemporaryFile
+from urllib.request import urlopen
+
 from guests.models import Party, Guest
 try:
     from StringIO import StringIO
 except ImportError:
     from io import StringIO
 
+WRITE_CHUNK_SIZE = 16 * 1024
+
+def import_guests_url(url):
+    """
+    Fetch contents from a URL and pass it through to `import_guests`
+    """
+    with NamedTemporaryFile() as f:
+        # Get the contents of the given URL
+        response = urlopen(url)
+        # Read the first chunk from the response
+        chunk = response.read(WRITE_CHUNK_SIZE)
+        # Continue to read chunks until we're all out of chunks
+        while chunk:
+            f.write(chunk)
+            chunk = response.read(WRITE_CHUNK_SIZE)
+        # Seek to the beginning of the file so import_guests can read it
+        f.seek(0)
+        # Return the file name to read from in import_guests
+        return import_guests(f.name)
 
 def import_guests(path):
     with open(path, 'r') as csvfile:
