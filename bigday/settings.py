@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import sys
 from decouple import config
 import dj_database_url
 
@@ -155,20 +156,20 @@ except ImportError:
 import django_heroku
 django_heroku.settings(locals())
 
-#LOGGING = {
-#        'version': 1,
-#        'disable_existing_loggers': False,
-#        'handlers': {
-#            'console':{
-#                'class':'logging.StreamHandler',
-#                'stream': sys.stdout
-#                }
-#            },
-#        'loggers': {
-#            'django': {
-#                'handlers': ['console'],
-#                'level': 'DEBUG',
-#                'propagate': True,
-#                }
-#            }
-#        }
+LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console':{
+                'class':'logging.StreamHandler',
+                'stream': sys.stdout
+                }
+            },
+        'loggers': {
+            'django': {
+                'handlers': ['console'],
+                'level': 'DEBUG',
+                'propagate': True,
+                }
+            }
+        }
