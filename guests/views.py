@@ -74,8 +74,10 @@ InviteResponse = namedtuple('InviteResponse', ['guest_pk', 'is_attending'])
 
 
 def _parse_invite_params(params):
+    print('\n\nParams: %s\n\n'%(params))
     responses = {}
     for param, value in params.items():
+        if param.startswith('attending'):
             pk = int(param.split('-')[-1])
             response = responses.get(pk, {})
             response['attending'] = True if value == 'yes' else False
